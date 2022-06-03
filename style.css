@@ -1,0 +1,90 @@
+h1 {
+    margin:0px;
+    margin-left:5px ;
+    color:#ccece6;
+}
+ul.nav {
+    display: flex;
+    margin:0;
+    padding:0;
+    justify-content: space-between;
+    list-style:none;
+    height: 50px; line-height:50px;
+    background:#0d7963; /* you can change the backgorund color here. */
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:17px;
+}
+ul.nav li {
+    border-right:1px solid #189b80; /* you can change the border color matching to your background color */
+    float:left;
+}
+ul.nav a {
+    display:block;
+    padding:0 28px;
+    color:#ccece6;
+    text-decoration:none;
+}
+ul.nav a:hover,
+ul.nav li.current a {
+    background:#086754;
+}
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 800px;
+    margin-left: 0px;
+    background-image: url('bck.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.des {
+    height: 150px;
+    width: 600px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #0d7963;
+    opacity: 0.8;
+    margin: 0px;
+    font-size: 20px;
+    color: #ccece6;
+    padding: 8px;
+}
+button {
+    border-color: aqua;
+    background-color: aqua;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    width: 50px;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+.listing {
+    text-align: center;
+    color: #086754;
+    font-size: 30px;
+}
+ul{
+    list-style-type: none;
+}
+ul li {
+    text-decoration: none;
+}
+#main-footer{
+	padding: 16px;
+	background:#0d7963;
+	text-align: center;
+    margin: 0px;
+    color: #ccece6;
+}
+button a {
+    color: black;
+    text-decoration: none;
+}
