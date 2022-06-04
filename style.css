@@ -3,6 +3,9 @@ h1 {
     margin-left:5px ;
     color:#ccece6;
 }
+body {
+    margin: 0px;
+}
 ul.nav {
     display: flex;
     margin:0;
@@ -48,7 +51,7 @@ ul.nav li.current a {
     border-radius: 15px;
     text-align: center;
     background-color: #0d7963;
-    opacity: 0.8;
+    
     margin: 0px;
     font-size: 20px;
     color: #ccece6;
