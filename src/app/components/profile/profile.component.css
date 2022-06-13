@@ -1,0 +1,30 @@
+h1 {
+  color: #086754;
+}
+h2, h3, h4, h5 {
+    border-bottom: 1px solid #086754;
+    color: #048aa1;
+    font-size: 25px;
+    padding-bottom: 10px;
+  }
+  p {
+      font-size: 25px;
+  }
+  .container {
+    margin: auto;
+    width: 350px;
+    text-align: center;
+  }
+  .listFlex {
+      display: flex;
+      justify-content: center;
+      font-size: 25px;
+  }
+  
+  img {
+    width: 100%;
+    box-shadow: 10px 5px 5px grey;
+  }
+  .profilepic {
+    background-image: url('pp.jpg');
+  }
