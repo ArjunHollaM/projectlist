@@ -1,5 +1,9 @@
 .active {
     background-color: #074d3f;
+    cursor: none;
+}
+li{
+    cursor: pointer;
 }
 h1 {
     margin-left: 10px;
