@@ -6,9 +6,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProjectsComponent } from './components/projects/projects.component';
+//import { ProjectsComponent } from './components/projects/projects.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProjectsModule } from './modules/projects/projects.module';
 
 @NgModule({
   declarations: [
@@ -17,18 +18,13 @@ import { AppRoutingModule } from './app-routing.module';
     ButtonComponent,
     HomeComponent,
     FooterComponent,
-    ProjectsComponent,
+    // ProjectsComponent,
     ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      { path: '' , component: HomeComponent },
-      { path: 'home' , component: HomeComponent },
-      { path: 'projects' , component: ProjectsComponent },
-      { path: 'profile' , component: ProfileComponent }
-    ])
+    ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

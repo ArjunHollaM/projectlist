@@ -1,0 +1,12 @@
+.btn {
+    border-color: aqua;
+    background-color: aqua;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    width: 50px;
+}
+.btn a {
+    color: black;
+    text-decoration: none;
+}

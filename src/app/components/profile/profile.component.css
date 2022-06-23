@@ -1,13 +1,13 @@
 h1 {
   color: #086754;
 }
-h2, h3, h4, h5 {
+  h3, h4, h5 {
     border-bottom: 1px solid #086754;
     color: #048aa1;
     font-size: 25px;
     padding-bottom: 10px;
   }
-  p {
+  .info {
       font-size: 25px;
   }
   .container {
@@ -21,7 +21,7 @@ h2, h3, h4, h5 {
       font-size: 25px;
   }
   
-  img {
+  .profilepic {
     width: 100%;
     box-shadow: 10px 5px 5px grey;
   }
