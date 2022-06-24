@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 //import { ProjectsComponent } from './components/projects/projects.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ProjectsModule } from './modules/projects/projects.module';
+//import { ProjectsModule } from './modules/projects/projects.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ProjectsModule } from './modules/projects/projects.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProjectsModule
+    // ProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

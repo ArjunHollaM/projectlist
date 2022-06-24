@@ -20,3 +20,28 @@
     background-color: #168a5d;
     color: white;
   }
+  .backbtn {
+    background-color: #168a5d;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+  }
+  
+  .backbtn {
+    background-color: white; 
+    color:  #168a5d; 
+    border: 2px solid #168a5d;
+  }
+  
+  .backbtn:hover {
+    background-color: #168a5d;
+    color: white;
+  }

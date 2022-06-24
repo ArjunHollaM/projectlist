@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { projects } from '../../example-projects';
 import { Project } from '../../Project';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-load-projects',
@@ -10,9 +11,13 @@ import { Project } from '../../Project';
 export class LoadProjectsComponent implements OnInit {
   projects: Project[] = projects;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  goBack() {
+    this.location.back();
   }
 
 }
