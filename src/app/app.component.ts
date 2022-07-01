@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,12 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'basicsite';
-  // tabIndex = 1 ;
+  constructor(public authService: AuthenticationService, private router: Router) { }
 
-  constructor() { }
+  logout() {
+    this.authService.logout().subscribe(() => {
+      this.router.navigate(['/']);
+    });
 
-  // moveTo(index: number){
-  //   this.tabIndex = index;
-  // }
+  }
 }

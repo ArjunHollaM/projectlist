@@ -1,9 +1,17 @@
 <mat-toolbar>
     Sign Up or Login to access our page
-    <button mat-button routerLink="/login">
-        <mat-icon>login</mat-icon>
-        Login
-    </button>
+    <ng-container *ngIf="user$ | async as user; else loginbutton">
+        <button mat-button (click)="logout()" >
+            <mat-icon>logout</mat-icon>
+            Logout
+        </button>
+    </ng-container>
+    <ng-template #loginbutton>
+        <button mat-button routerLink="/login">
+            <mat-icon>login</mat-icon>
+            Login
+        </button>
+    </ng-template>  
 </mat-toolbar>
 <div>
     <router-outlet></router-outlet>
