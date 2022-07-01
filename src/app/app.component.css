@@ -1,0 +1,12 @@
+mat-toolbar {
+    justify-content: space-between;
+    background-color: #0b6351;
+    color: white;
+  }
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 45px;
+}
+button{
+    background-color: #0b6351;
+    color: white;
+  }

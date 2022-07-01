@@ -4,14 +4,29 @@ import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from '../app/components/home/home.component';
 //import {ProjectsComponent} from '../app/components/projects/projects.component';
 import {ProfileComponent} from '../app/components/profile/profile.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo: '/home',
+    redirectTo: '/landing',
     pathMatch: 'full' 
+  },
+  { 
+    path: 'landing', 
+    component: LandingComponent 
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent 
+  },
+  { 
+    path: 'signup', 
+    component: SignUpComponent 
   },
   { 
     path: 'home', 

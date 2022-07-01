@@ -1,3 +1,13 @@
+<header>
+    <ul class="nav">
+        <div><h1 class="name">COMPANY</h1></div>
+        <div>
+        <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
+        <li><a routerLinkActive="active" routerLink="/projects">Projects</a></li>
+        <li><a routerLinkActive="active" routerLink="/profile">Profile</a></li>
+        </div>    
+    </ul>
+</header>
 <div class="listing">
     <h2>Our Projects and its Tech Stack</h2>
     <table id="projectlisting" class="projectlisting">
@@ -14,3 +24,8 @@
     </table>
     <button class="backbtn" (click)="goBack()">Back</button>
 </div>
+<footer id="main-footer" class="grid fstyle">
+    <p>Copyright &copy; 2022Company</p>
+    <div><h3>Terms & Conditions | Privacy Policy | Site Map | FAQs</h3></div>
+    Catch me on Twitter - <a href="#">@arjun</a>
+</footer> 

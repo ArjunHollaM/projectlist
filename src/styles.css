@@ -1,7 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Moon+Dance&family=Roboto:wght@300&display=swap');
-body {
+html, body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
     
+html, body { height: 100%; }
+.form-container {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    align-items: center;
+    background: #90d6a5;
+    padding: 48px;
+    border-radius: 16px;
+  }
+  .form-container mat-form-field {
+    width: 100%;
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .margin-top {
+    margin-top: 16px !important;
+  }
+  
+  .text-center {
+    text-align: center;
+  }

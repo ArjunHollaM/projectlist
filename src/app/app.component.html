@@ -1,17 +1,10 @@
-
-  <app-header></app-header>
-  <!-- <header>
-    <ul class="nav">
-        <div><h1>COMPANY</h1></div>
-        <div>
-        <li (click)="moveTo(1)"><a>Home</a></li>
-        <li (click)="moveTo(2)"><a>Projects</a></li>
-        <li (click)="moveTo(3)"><a>Profile</a></li>
-        </div>    
-    </ul>
-</header> -->
-<router-outlet></router-outlet>
-  <!-- <app-home *ngIf="tabIndex === 1"></app-home>
-  <app-projects *ngIf="tabIndex === 2"></app-projects>
-  <app-profile *ngIf="tabIndex === 3"></app-profile> -->
-  <app-footer></app-footer>
+<mat-toolbar>
+    Sign Up or Login to access our page
+    <button mat-button routerLink="/login">
+        <mat-icon>login</mat-icon>
+        Login
+    </button>
+</mat-toolbar>
+<div>
+    <router-outlet></router-outlet>
+</div>

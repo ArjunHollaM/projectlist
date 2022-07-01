@@ -23,7 +23,10 @@
     margin: 0px;
     font-size: 20px;
     color: #ffffff;
-    padding: 8px;
+    padding: 15px;
+}
+p {
+    margin: 15px;
 }
 .break {
     flex-basis: 100%;
