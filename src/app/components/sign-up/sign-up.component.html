@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h1>Login</h1>
+    <h1>Sign Up</h1>
     <form [formGroup]="signUpForm" (ngSubmit)="submit()">
       <mat-form-field>
         <input matInput placeholder="Name" formControlName="name" /> 
@@ -34,8 +34,8 @@
         Passwords should match
     </mat-error>
       <div class="center margin-top">
-          <button class="btn" type="submit" mat-raised-button>Login</button>
+          <button class="btn" type="submit" mat-raised-button>Sign Up</button>
       </div>
-      <span class="center margin-top">New to our platform? <a class="sign-up-link" routerLink="/sign-up">Sign up!</a></span>
+      <span class="center margin-top">New to our platform? <a class="sign-up-link" routerLink="/signup">Sign up!</a></span>
     </form>
   </div>

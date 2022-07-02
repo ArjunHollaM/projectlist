@@ -64,17 +64,17 @@ export class SignUpComponent implements OnInit {
     }
 
     const { name, email, password } = this.signUpForm.value;
-    this.authService.signUp(email, password)
-      .pipe(
-        this.toast.observe({
-          success: 'Congrats! You are all signed up',
-          loading: 'Signing up...',
-          error: "Could not sign Up",
-        })
-      )
-      .subscribe(() => {
-        this.router.navigate(['/home']);
-      });
+    // this.authService.signUp(email, password)
+    //   .pipe(
+    //     this.toast.observe({
+    //       success: 'Congrats! You are all signed up',
+    //       loading: 'Signing up...',
+    //       error: "Could not sign Up",
+    //     })
+    //   )
+    //   .subscribe(() => {
+    //     this.router.navigate(['/home']);
+    //   });
   }
 
 }
