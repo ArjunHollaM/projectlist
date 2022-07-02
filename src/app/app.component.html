@@ -1,6 +1,6 @@
 <mat-toolbar>
     Sign Up or Login to access our page
-    <ng-container *ngIf="user$ | async as user; else loginbutton">
+    <ng-container *ngIf="authService.currentUser$ | async as user; else loginbutton">
         <button mat-button (click)="logout()" >
             <mat-icon>logout</mat-icon>
             Logout
