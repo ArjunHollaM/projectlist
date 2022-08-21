@@ -5,6 +5,7 @@
         <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
         <li><a routerLinkActive="active" routerLink="/projects">Projects</a></li>
         <li><a routerLinkActive="active" routerLink="/profile">Profile</a></li>
+        <a (click)="toggleLogin()">{{auth.isLoggedIn ? 'Logout' : 'Login'}}</a>
         </div>    
     </ul>
 </header>

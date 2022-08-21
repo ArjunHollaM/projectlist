@@ -16,7 +16,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -34,7 +33,6 @@ import { HotToastModule } from '@ngneat/hot-toast';
     FooterComponent,
     // ProjectsComponent,
     ProfileComponent,
-    LandingComponent,
     LoginComponent,
     SignUpComponent
   ],

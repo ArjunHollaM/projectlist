@@ -11,10 +11,4 @@ export class AppComponent {
   title = 'basicsite';
   constructor(public authService: AuthenticationService, private router: Router) { }
 
-  logout() {
-    this.authService.logout().subscribe(() => {
-      this.router.navigate(['/']);
-    });
-
   }
-}

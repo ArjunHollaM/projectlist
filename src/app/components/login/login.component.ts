@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -11,39 +11,31 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   
-  loginForm = new FormGroup({
-    email: new FormControl('',[Validators.required,Validators.email]),
-    password: new FormGroup('',Validators.required)
-  });
-
-  constructor(private authService: AuthenticationService, private toast: HotToastService, private router: Router) { }
+  registerForm!: FormGroup;
+  // isSignedIn=false
+  constructor(
+    private fb: FormBuilder,
+    public firebaseService: AuthenticationService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    this.registerForm = this.fb.group({
+      email: new FormControl(''),
+      password: new FormControl(''),
+    });
   }
-
-  get email() {
-    return this.loginForm.get('email');
+  login() {
+    console.log('trying to login');
+    this.firebaseService
+      .signin(this.registerForm.value.email, this.registerForm.value.password)
+      .then(() => {
+        this.router.navigate(['/home']);
+      })
+      .catch((error) => {
+        console.log('[LoginFormComponent]: login() -', error);
+      });
+    // if(this.firebaseService.isLoggedIn)
+    // this.isSignedIn=true
   }
-
-  get password() {
-    return this.loginForm.get('password');
-  }
-
-  submit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
-
-    const { email , password } = this.loginForm.value;
-    // this.authService.login(email,password).pipe(
-    //   this.toast.observe({
-    //     success: 'Logged in successfully',
-    //     loading: 'Logging in...',
-    //     error: 'There was an error'
-    //   })
-    // ).subscribe(() => {
-    //   this.router.navigate(['/home'])
-    // });
-  }
-
 }

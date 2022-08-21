@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
 import { Auth, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from '@angular/fire/auth';
 import { from, switchMap } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  currentUser$ = authState(this.auth);
-
-  constructor(private auth: Auth) { }
-
-  signUp(name: string, email: string, password: string) {
-    return from(createUserWithEmailAndPassword(this.auth, email, password))
-    .pipe(switchMap(({ user }) => updateProfile(user, {displayName: name}))
-    )
+  isLoggedIn = false;
+  constructor(public auth: AngularFireAuth) {}
+   signin(email: string, password: string) {
+    return this.auth.signInWithEmailAndPassword(email, password).then((res) => {
+      this.isLoggedIn = true;
+    });
   }
 
-  login(email: string , password: string){
-    return from(signInWithEmailAndPassword(this.auth, email, password));
+  async signup(email: string, password: string) {
+    await this.auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        this.isLoggedIn = true;
+      });
   }
-  
   logout() {
-    return from(this.auth.signOut())
+    this.isLoggedIn = false;
+    return this.auth.signOut();
+    
   }
   
 }
