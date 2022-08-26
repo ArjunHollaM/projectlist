@@ -21,7 +21,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire/compat'
 import { HotToastModule } from '@ngneat/hot-toast';
+import { AuthenticationService } from './services/authentication.service';
 //import { ProjectsModule } from './modules/projects/projects.module';
 
 @NgModule({

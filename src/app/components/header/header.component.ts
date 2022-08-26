@@ -2,17 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public auth: AuthenticationService, private router: Router) { }
+  constructor(public auth: AuthenticationService, private router: Router) {}
+  
 
   ngOnInit(): void {
   }
+
   toggleLogin(): void {
     console.log('[HeaderComponent] toggleLogin() - isLoggedIn:',this.auth.isLoggedIn);
     if (this.auth.isLoggedIn) {
@@ -22,5 +24,6 @@ export class HeaderComponent implements OnInit {
     } else {
       this.router.navigate(['/login']);
     }
-  }
+  
+}
 }

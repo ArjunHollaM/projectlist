@@ -6,15 +6,14 @@ import {HomeComponent} from '../app/components/home/home.component';
 import {ProfileComponent} from '../app/components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { AuthGuard } from './services/auth.guard';
+// import { AuthGuard } from './services/auth.guard';
 
 
 
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo: '/login',
-    pathMatch: 'full' 
+    component:HomeComponent
   },
   { 
     path: 'login', 
@@ -31,12 +30,12 @@ const routes: Routes = [
   { 
     path: 'projects',
     loadChildren: () => import('./modules/projects/projects.module').then((m) => m.ProjectsModule) ,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { 
     path: 'profile', 
     component: ProfileComponent ,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { 
     path: '**', 

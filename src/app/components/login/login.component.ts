@@ -10,9 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  registerForm!: FormGroup;
-  // isSignedIn=false
+  registerForm! : FormGroup;
   constructor(
     private fb: FormBuilder,
     public firebaseService: AuthenticationService,
@@ -21,8 +19,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      email: new FormControl(''),
-      password: new FormControl(''),
+      email : new FormControl(''),
+      password : new FormControl('')
     });
   }
   login() {
@@ -35,7 +33,6 @@ export class LoginComponent implements OnInit {
       .catch((error) => {
         console.log('[LoginFormComponent]: login() -', error);
       });
-    // if(this.firebaseService.isLoggedIn)
-    // this.isSignedIn=true
   }
+  
 }
