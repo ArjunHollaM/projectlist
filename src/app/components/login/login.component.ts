@@ -10,7 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  registerForm! : FormGroup;
+  registerForm : FormGroup;
   constructor(
     private fb: FormBuilder,
     public firebaseService: AuthenticationService,
