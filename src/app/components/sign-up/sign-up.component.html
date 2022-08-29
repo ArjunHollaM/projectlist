@@ -1,15 +1,20 @@
-<form [formGroup]="registerForm" >
-    
-  
-  <div class="container">
+<div class="container">
+  <div>
+    <h3>Register as a new user</h3>
+  </div>
+  <form [formGroup]="signUpForm">
     <label for="uname"><b>Email</b></label>
-    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required>
+    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
 
     <label for="pass"><b>Password</b></label>
-    <input type="password" formControlName="password" placeholder="Enter Password" name="pass" required>
+    <input type="password" formControlName="password" placeholder="Enter Password" name="pass" required />
 
-    <button type="submit" >Sign In</button>
-    <span class="psw"><a routerLink="/login">Click here to Login</a></span>
+    <label for="pass"><b>Confirm Password</b></label>
+    <input type="password" formControlName="rePassword" placeholder="Re-type Password" name="pass" required />
+
+    <button (click)="signUp()">Sign Up</button>
+  </form>
+  <div>
+    <span class="psw">Already have an account? <a routerLink="/login">Click here to Login</a></span>
   </div>
-
-</form>
+</div>

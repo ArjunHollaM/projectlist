@@ -1,16 +1,18 @@
-<form [formGroup] = "registerForm">
-    
-  
-  <div class="container">
+<div class="container">
+  <div>
+    <h3>Login to access secured content:</h3>
+  </div>
+  <div *ngIf="loginError">
+    {{ loginError }}
+  </div>
+  <form [formGroup]="registerForm">
     <label for="uname"><b>Email</b></label>
-    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required>
+    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" formControlName="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" formControlName="password" placeholder="Enter Password" name="psw" required />
 
     <button type="submit" (click)="login()">Log In</button>
-
-  </div>
-  
-
-</form>
+  </form>
+  <div><span>Not registered yet?</span> <a routerLink="/signup">REGISTER</a></div>
+</div>

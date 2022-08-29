@@ -1,57 +1,51 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from '../app/components/home/home.component';
-//import {ProjectsComponent} from '../app/components/projects/projects.component';
-import {ProfileComponent} from '../app/components/profile/profile.component';
+
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-// import { AuthGuard } from './services/auth.guard';
-
-
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    component:HomeComponent
+  {
+    path: 'login',
+    component: LoginComponent,
   },
-  { 
-    path: 'login', 
-    component: LoginComponent 
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
-  { 
-    path: 'signup', 
-    component: SignUpComponent 
+  {
+    path: 'home',
+    component: HomeComponent,
   },
-  { 
-    path: 'home', 
-    component: HomeComponent 
-  },
-  { 
+  {
     path: 'projects',
-    loadChildren: () => import('./modules/projects/projects.module').then((m) => m.ProjectsModule) ,
-    // canActivate: [AuthGuard],
+    loadChildren: () => import('./modules/projects/projects.module').then((m) => m.ProjectsModule),
+    canActivate: [AuthGuard],
   },
-  { 
-    path: 'profile', 
-    component: ProfileComponent ,
-    // canActivate: [AuthGuard],
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
-  { 
-    path: '**', 
+  {
+    path: '',
     redirectTo: '/home',
-    pathMatch: 'full' 
-  }
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  exports: [
-    RouterModule
-  ]
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

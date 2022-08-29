@@ -33,7 +33,7 @@ h1 {
     color:#ffffff;
     text-decoration:none;
 }
-.nav a:hover,
+/* .nav a:hover, */
 .nav li.current a {
     background:#086754;
 }
