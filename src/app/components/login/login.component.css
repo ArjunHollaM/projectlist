@@ -1,26 +1,29 @@
-/* input{
-    margin: 10px;
-    font-size: 22px;
-    background-color: rgb(47, 79, 68);
-    color: white;
-}*/
+.container {
+  margin: 16px;
+  /* width: 50%; */
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+}
+
 form {
-    width: 50%;
-    margin-top: 150px;
-    margin-left: 365px;
-    border: 3px solid #f1f1f1;
-  }
-  
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+  width: 50%;
+  margin-top: 24px;
+  /* margin-left: 365px; */
+  /* border: 3px solid #f1f1f1; */
+}
+
+/* Full-width inputs */
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 .btn {
-    background-color: rgb(47, 79, 68);
-    color: white;
-} 
+  background-color: rgb(47, 79, 68);
+  color: white;
+}
