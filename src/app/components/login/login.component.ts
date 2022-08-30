@@ -38,6 +38,9 @@ export class LoginComponent implements OnInit {
         this.resetErrorMessage();
       });
   }
+  googleLogin() {
+    this.authService.GoogleSignIn()
+  }
 
   resetErrorMessage(): void {
     setTimeout(() => {

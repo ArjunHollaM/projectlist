@@ -1,5 +1,7 @@
 h1 {
   color: #086754;
+  margin-top: 10px;
+  font-weight: bold;
 }
   h3, h4, h5 {
     border-bottom: 1px solid #086754;
@@ -9,6 +11,7 @@ h1 {
   }
   .info {
       font-size: 25px;
+      margin-bottom: 25px;
   }
   .container {
     margin: auto;
@@ -19,11 +22,13 @@ h1 {
       display: flex;
       justify-content: center;
       font-size: 25px;
+      margin-bottom: 15px;
   }
   
   .profilepic {
     width: 100%;
     box-shadow: 10px 5px 5px grey;
+    margin-bottom: 15px;
   }
   /* .profilepic {
     background-image: url('pp.jpg');

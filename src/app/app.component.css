@@ -10,3 +10,6 @@ button{
     background-color: #0b6351;
     color: white;
   }
+.cntent {
+  min-height: 70vh;
+}

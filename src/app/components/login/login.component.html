@@ -1,18 +1,24 @@
 <div class="container">
+  <div class="blk">
   <div>
-    <h3>Login to access secured content:</h3>
+    <h3>Login</h3>
   </div>
   <div *ngIf="loginError">
     {{ loginError }}
   </div>
   <form [formGroup]="registerForm">
-    <label for="uname"><b>Email</b></label>
+    <label for="uname">Email</label>
     <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
 
-    <label for="psw"><b>Password</b></label>
+    <label for="psw">Password</label>
     <input type="password" formControlName="password" placeholder="Enter Password" name="psw" required />
 
-    <button type="submit" (click)="login()">Log In</button>
+    <button class="btn" type="submit" (click)="login()">Log In</button>
+    <div class="nr googleBtn" (click)="googleLogin()">
+      <i class="fa-brands fa-google"></i>
+      Log in with Google
+    </div>
   </form>
-  <div><span>Not registered yet?</span> <a routerLink="/signup">REGISTER</a></div>
+  <div class="nr"><span>Not registered yet?</span> <a routerLink="/signup">REGISTER</a></div>
+</div>
 </div>

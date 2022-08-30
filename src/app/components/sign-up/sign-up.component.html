@@ -1,20 +1,22 @@
 <div class="container">
+  <div class="blk">
   <div>
-    <h3>Register as a new user</h3>
+    <h3>Register</h3>
   </div>
   <form [formGroup]="signUpForm">
-    <label for="uname"><b>Email</b></label>
+    <label for="uname">Email</label>
     <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
 
-    <label for="pass"><b>Password</b></label>
+    <label for="pass">Password</label>
     <input type="password" formControlName="password" placeholder="Enter Password" name="pass" required />
 
-    <label for="pass"><b>Confirm Password</b></label>
+    <label for="pass">Confirm Password</label>
     <input type="password" formControlName="rePassword" placeholder="Re-type Password" name="pass" required />
 
-    <button (click)="signUp()">Sign Up</button>
+    <button class="btn" (click)="signUp()">Sign Up</button>
   </form>
-  <div>
+  <div class="nr">
     <span class="psw">Already have an account? <a routerLink="/login">Click here to Login</a></span>
   </div>
+</div>
 </div>
