@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { PhoneLoginComponent } from './components/phone-login/phone-login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     ProfileComponent,
     LoginComponent,
     SignUpComponent,
+    PhoneLoginComponent,
   ],
   imports: [
     BrowserModule,
