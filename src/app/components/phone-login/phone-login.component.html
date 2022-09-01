@@ -3,12 +3,14 @@
     <div>
       <h3>Phone Login</h3>
     </div>
-    <form>
+    <form class="frm">
       <label for="phone">Phone Number</label>
-      <input type="text" formControlName="phno" placeholder="Enter Phone Number" name="phone" required />
+      <input type="text" [(ngModel)]="phno" placeholder="Enter Phone Number" name="phone" required />
 
-      <button class="btn" type="submit">Send Code</button>
+      <button class="btn" type="submit" (click)="getCode()">Send Code</button>
+      
     </form>
+    <div id="sib"></div>
     <div class="nr"><span>Not registered yet?</span> <a routerLink="/signup">REGISTER</a></div>
   </div>
   </div>

@@ -47,7 +47,8 @@
     color: white;
     cursor: pointer;
   }
-  .googleBtn {
-    cursor: pointer;
+  #sib {
+    display: block;
+    margin-top: 10px;
+    margin-left: 187px;
   }
-  
