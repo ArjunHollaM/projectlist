@@ -36,8 +36,8 @@ export class CodeComponent implements OnInit {
     firebase.auth()
     .signInWithCredential(cred)
     .then((response)=>{
-      // let ob = this.auth.isLoggedIn()
-      // ob = new BehaviorSubject<boolean>(true)
+      let ob = this.auth.isLoggedIn()
+      ob = new BehaviorSubject<boolean>(true)
       this.router.navigate(['/home'])
     })
     .catch((error)=>{

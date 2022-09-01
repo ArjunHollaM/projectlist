@@ -16,3 +16,11 @@
     color: white;
     cursor: pointer;
   }
+  .enterotp, h2 {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+  }
