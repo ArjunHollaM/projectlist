@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore'
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { getAuth, provideAuth } from '@angular/fire/auth';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HotToastModule } from '@ngneat/hot-toast';
-
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +29,6 @@ import { NgOtpInputModule } from 'ng-otp-input';
     ButtonComponent,
     HomeComponent,
     FooterComponent,
-    // ProjectsComponent,
     ProfileComponent,
     LoginComponent,
     SignUpComponent,
@@ -42,12 +41,12 @@ import { NgOtpInputModule } from 'ng-otp-input';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    // provideFirebaseApp(() => initializeApp(environment.firebase)),
-    // provideAuth(() => getAuth()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     HotToastModule.forRoot(),
-    NgOtpInputModule
+    NgOtpInputModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],

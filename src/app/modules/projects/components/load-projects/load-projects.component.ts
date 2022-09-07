@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { projects } from '../../example-projects';
+//import { projects } from '../../example-projects';
 import { Project } from '../../Project';
 import {Location} from '@angular/common';
+import { ProjectdataService } from '../../../../services/projectdata.service'
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-load-projects',
@@ -9,11 +11,14 @@ import {Location} from '@angular/common';
   styleUrls: ['./load-projects.component.css']
 })
 export class LoadProjectsComponent implements OnInit {
-  projects: Project[] = projects;
+  projects: Project[];
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private projectService: ProjectdataService) { }
 
   ngOnInit(): void {
+    this.projectService.getProjects().subscribe(res =>{
+      this.projects=res
+    })
   }
 
   goBack() {
