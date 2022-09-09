@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Project Details</h1>
+<form class="blk" (ngSubmit)="onSubmit()">
+    <br/>
+    <label>Name</label>  <br />
+    <!-- <input type = "text" name = "name" /> -->
+    <input type="text" name="name" [(ngModel)]="project.name"/><br/>
+    <label>Techstack</label> <br />
+    <!-- <input type = "text" name = "name" /> -->
+    <input type="text" name="techstack" [(ngModel)]="project.techstack"/><br/>
+    <label>Duration</label> <br />
+    <input type="text" name="duration" [(ngModel)]="project.duration"/><br/>
+    <label>Budget</label> <br />
+    <input type="text" name="budget" [(ngModel)]="project.budget"/><br/>
+    <label>Description</label>  <br />
+    <textarea class="des" rows = "5" cols = "50" name = "description" [(ngModel)]="project.description"></textarea>
+    <br/>
+    <label>Start Date</label> <br />
+    <input type="datetime-local" name="date" [(ngModel)]="project.startdate"/><br/>
+    <label>Status</label> <br />
+    <input type="text" name="status" [(ngModel)]="project.status"/><br/>
+
+    <input type="submit" class="btn" value="Save">
+ </form>
+</div>

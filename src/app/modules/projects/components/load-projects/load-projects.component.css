@@ -11,6 +11,10 @@
     border: 1px solid #ddd;
     padding: 8px;
   }
+  a {
+    color: #086754;
+    text-decoration: none;
+  }
   tr:nth-child(even){background-color: #f2f2f2;}
   tr:hover {background-color: #ddd;}
   th {

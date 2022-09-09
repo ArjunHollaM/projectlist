@@ -25,4 +25,8 @@ export class LoadProjectsComponent implements OnInit {
     this.location.back();
   }
 
+  // handleDelete(event, project){
+  //   this.projectService.deleteProject(project);
+  // }
+
 }

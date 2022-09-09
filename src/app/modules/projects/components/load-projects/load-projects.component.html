@@ -2,15 +2,22 @@
   <h2>Our Projects and its Tech Stack</h2>
   <table id="projectlisting" class="projectlisting">
     <tr>
-      <th>ID</th>
+      <!-- <th>ID</th> -->
       <th>Project</th>
       <th>Techstack</th>
+      <th>Status</th>
+      <th style="width: 15px;"></th>
+      <th style="width: 15px;"></th>
     </tr>
     <tr *ngFor="let project of projects">
-      <td>{{ project?.id }}</td>
+      <!-- <td>{{ project?.id }}</td> -->
       <td>{{ project?.name }}</td>
       <td>{{ project?.techstack }}</td>
+      <td>{{ project?.status }}</td>
+      <td><a routerLink="details">✎</a></td>
+      <td>🗑️</td>
     </tr>
   </table>
+  <button class="backbtn" routerLink="details">Add Project</button>
   <button class="backbtn" (click)="goBack()">Back</button>
 </div>
