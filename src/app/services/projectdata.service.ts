@@ -18,7 +18,7 @@ export class ProjectdataService {
     this.projects = this.projectsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Project;
-        const id = a.payload.doc.id;
+        data.id = a.payload.doc.id;
         return data;
       }))
     );
@@ -31,6 +31,11 @@ export class ProjectdataService {
    addProject(project: Project) {
     this.projectsCollection.add(project);
    }
+
+   updateProject(project: Project){
+    // delete project.id;
+    this.afs.doc('projects/' + project.id).update(project);
+}
 
    deleteProject(project: Project) {
     this.projectDoc = this.afs.doc(`projects/${project.id}`);

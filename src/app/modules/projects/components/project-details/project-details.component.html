@@ -18,7 +18,12 @@
     <label>Start Date</label> <br />
     <input type="datetime-local" name="date" [(ngModel)]="project.startdate"/><br/>
     <label>Status</label> <br />
-    <input type="text" name="status" [(ngModel)]="project.status"/><br/>
+    <select name="status" class="statusselect"  [(ngModel)]="project.status">
+        <option value="Completed">Completed</option>
+        <option value="In-progress">In-Progress</option>
+        <option value="New" selected>New</option>
+        <option value="Budgeted">Budgeted</option>
+    </select>
 
     <input type="submit" class="btn" value="Save">
  </form>

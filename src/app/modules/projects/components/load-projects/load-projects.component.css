@@ -99,3 +99,6 @@ h2 {
     margin: 0px;
     color: #ffffff;
 }
+.rmv {
+  cursor: pointer;
+}
