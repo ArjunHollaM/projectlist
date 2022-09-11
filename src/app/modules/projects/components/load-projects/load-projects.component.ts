@@ -17,8 +17,8 @@ import { Router } from '@angular/router';
 export class LoadProjectsComponent implements OnInit {
 
   projects: Project[];
-  updateFlag: boolean;
-  private projectToEdit: Project
+  static updateFlag: boolean;
+  static projectToEdit: Project
 
   constructor(private location: Location, private projectService: ProjectdataService,private router: Router) { }
 
@@ -33,14 +33,10 @@ export class LoadProjectsComponent implements OnInit {
   }
 
   handleUpdate(event: any, project: Project){
-    this.updateFlag = true;
-    this.projectToEdit = project;
+    LoadProjectsComponent.updateFlag = true;
+    LoadProjectsComponent.projectToEdit = project;
     this.router.navigate(['/projects/details'])
   }
-  getProjectToEdit(){
-    return this.projectToEdit;
-  }
-
 
   handleDelete(event: any, project: Project){
     if(confirm("Are you sure you want to delete this project? This action is permanent!"))

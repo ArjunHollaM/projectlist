@@ -25,9 +25,9 @@ export class ProjectDetailsComponent implements OnInit {
   constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent) { }
 
   ngOnInit(): void {
-    console.log(this.projectComponent.updateFlag)
-    if(this.projectComponent.updateFlag===true){
-      this.project = this.projectComponent.getProjectToEdit();
+    console.log(LoadProjectsComponent.updateFlag)
+    if(LoadProjectsComponent.updateFlag===true){
+      this.project = LoadProjectsComponent.projectToEdit;
       console.log(this.project)
     }
     else{
@@ -48,7 +48,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && this.projectComponent.updateFlag==false){
+    if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==false){
       this.projectService.addProject(this.project);
       this.project.name='';
       this.project.techstack= '';
@@ -59,9 +59,9 @@ export class ProjectDetailsComponent implements OnInit {
       this.project.status= '';
       this.location.back();
     }
-    else if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && this.projectComponent.updateFlag==true){
+    else if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==true){
       this.projectService.updateProject(this.project);
-      this.projectComponent.updateFlag = false;
+      LoadProjectsComponent.updateFlag = false;
       this.project.name='';
       this.project.techstack= '';
       this.project.description= '';

@@ -14,8 +14,8 @@
       <td>{{ project?.name }}</td>
       <td>{{ project?.techstack }}</td>
       <td>{{ project?.status }}</td>
-      <td><a (click)="handleUpdate($event, project)">✎</a></td>
-      <td><a (click)="handleDelete($event, project)" class="rmv">🗑️</a></td>
+      <td><a (click)="handleUpdate($event, project)" class="rmvupd">✎</a></td>
+      <td><a (click)="handleDelete($event, project)" class="rmvupd">🗑️</a></td>
     </tr>
   </table>
   <button class="backbtn" routerLink="details">Add Project</button>
