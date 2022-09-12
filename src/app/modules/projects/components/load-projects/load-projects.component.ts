@@ -16,16 +16,17 @@ import { Router } from '@angular/router';
 })
 export class LoadProjectsComponent implements OnInit {
 
-  projects: Project[];
+  projects$: Observable<Project[]>;
   static updateFlag: boolean;
   static projectToEdit: Project
 
   constructor(private location: Location, private projectService: ProjectdataService,private router: Router) { }
 
   ngOnInit(): void {
-    this.projectService.getProjects().subscribe(res =>{
-      this.projects=res
-    })
+    // this.projectService.getProjects().subscribe(res =>{
+    //   this.projects=res
+    // })
+    this.projects$ = this.projectService.getProjects();
   }
 
   goBack() {

@@ -9,7 +9,7 @@
       <th style="width: 15px;"></th>
       <th style="width: 15px;"></th>
     </tr>
-    <tr *ngFor="let project of projects">
+    <tr *ngFor="let project of projects$ | async">
       <!-- <td>{{ project?.id }}</td> -->
       <td>{{ project?.name }}</td>
       <td>{{ project?.techstack }}</td>

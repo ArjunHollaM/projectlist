@@ -47,6 +47,16 @@ export class ProjectDetailsComponent implements OnInit {
     
   }
 
+  ngOnDestroy(): void {
+    this.project.name='';
+    this.project.techstack= '';
+    this.project.description= '';
+    this.project.startdate= new Date();
+    this.project.duration= 0;
+    this.project.budget= 0;
+    this.project.status= '';
+  }
+
   onSubmit() {
     if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==false){
       this.projectService.addProject(this.project);

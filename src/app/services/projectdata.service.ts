@@ -14,14 +14,14 @@ export class ProjectdataService {
 
   constructor(public afs: AngularFirestore) {
     this.projectsCollection = afs.collection<Project>('projects');
-    //this.projects = this.projectsCollection.valueChanges({idField: 'id'});
-    this.projects = this.projectsCollection.snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Project;
-        data.id = a.payload.doc.id;
-        return data;
-      }))
-    );
+    this.projects = this.projectsCollection.valueChanges({idField: 'id'});
+    // this.projects = this.projectsCollection.snapshotChanges().pipe(
+    //   map(actions => actions.map(a => {
+    //     const data = a.payload.doc.data() as Project;
+    //     data.id = a.payload.doc.id;
+    //     return data;
+    //   }))
+    // );
    }
 
    getProjects() {
