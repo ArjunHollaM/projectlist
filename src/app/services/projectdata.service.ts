@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { map, Observable } from 'rxjs';
+import { Members } from '../modules/projects/Members';
 import { Project } from '../modules/projects/Project';
 
 @Injectable({
@@ -10,6 +11,7 @@ export class ProjectdataService {
   projectsCollection: AngularFirestoreCollection<Project>;
   projects: Observable<Project[]>;
   //snapshot: any;
+  members:Observable<Members[]>
   projectDoc: AngularFirestoreDocument<Project>;
 
   constructor(public afs: AngularFirestore) {
@@ -35,11 +37,16 @@ export class ProjectdataService {
    updateProject(project: Project){
     // delete project.id;
     this.afs.doc('projects/' + project.id).update(project);
-}
+  }
 
    deleteProject(project: Project) {
     this.projectDoc = this.afs.doc(`projects/${project.id}`);
     this.projectDoc.delete();
-   }
+  }
+
+  getMembers(project: Project){
+    this.members=this.afs.collection<Members>('projects/'+project.id+'/members').valueChanges({idField:'id'})
+    return this.members
+  }
 
 }

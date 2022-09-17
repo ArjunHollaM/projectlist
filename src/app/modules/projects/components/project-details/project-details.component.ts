@@ -3,6 +3,8 @@ import { ProjectdataService } from 'src/app/services/projectdata.service';
 import { Project } from '../../Project';
 import { Location } from '@angular/common';
 import { LoadProjectsComponent } from '../load-projects/load-projects.component';
+import { Members } from '../../Members';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project-details',
@@ -10,17 +12,9 @@ import { LoadProjectsComponent } from '../load-projects/load-projects.component'
   styleUrls: ['./project-details.component.css']
 })
 export class ProjectDetailsComponent implements OnInit {
-  // project: Project =  {
-  //   id: '',
-  //   name: '',
-  //   techstack: '',
-  //   description: '',
-  //   startdate: new Date(),
-  //   duration: 0,
-  //   budget: 0,
-  //   status: ''
-  // }
+  
   project: Project
+  members$: Observable<Members[]>;
 
   constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent) { }
 
@@ -43,6 +37,9 @@ export class ProjectDetailsComponent implements OnInit {
       }
       console.log(this.project)
 
+    }
+    if(this.project){
+      this.members$ = this.projectService.getMembers(this.project)
     }
     
   }

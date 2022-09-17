@@ -1,4 +1,4 @@
-export interface members{
+export interface Members{
     firstName: string;
     lastName: string;
     email: string;

@@ -58,3 +58,20 @@
     box-sizing: border-box;
     color: black;
   }
+  .members{
+    width: 49%;
+    margin-top: 50px;
+    align-items: center;
+    border: 3px solid #f1f1f1;
+    padding: 16px;
+  }
+  .namelist {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(190, 185, 185);
+  }
+ td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 20px;
+  }
