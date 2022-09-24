@@ -13,6 +13,7 @@ export class ProjectdataService {
   //snapshot: any;
   members:Observable<Members[]>
   projectDoc: AngularFirestoreDocument<Project>;
+  
 
   constructor(public afs: AngularFirestore) {
     this.projectsCollection = afs.collection<Project>('projects');
@@ -30,16 +31,18 @@ export class ProjectdataService {
     return this.projects;
    }
 
-   addProject(project: Project) {
+   async addProject(project: Project) {
+    console.log('working')
     this.projectsCollection.add(project);
+    
    }
 
-   updateProject(project: Project){
+   async updateProject(project: Project){
     // delete project.id;
     this.afs.doc('projects/' + project.id).update(project);
   }
 
-   deleteProject(project: Project) {
+   async deleteProject(project: Project) {
     this.projectDoc = this.afs.doc(`projects/${project.id}`);
     this.projectDoc.delete();
   }
@@ -48,5 +51,9 @@ export class ProjectdataService {
     this.members=this.afs.collection<Members>('projects/'+project.id+'/members').valueChanges({idField:'id'})
     return this.members
   }
+
+  async addMembers(project: Project['id'],memberdet:Members){
+    this.afs.collection<Members>('projects/'+project+'/members').add(memberdet);
+}
 
 }

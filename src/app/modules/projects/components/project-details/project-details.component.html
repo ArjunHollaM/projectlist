@@ -27,17 +27,18 @@
 
     <input type="submit" class="btn" value="Save">
  </form>
- <div class="members">
+ <div *ngIf="this.flag" class="members">
     <h1>Member Details</h1>
+    <button class="btn" routerLink="/projects/add-members">Add Members</button>
     <table id="memberstable" class="namelist">
-      <tbody>
+      
         <tr *ngFor="let member of members$ | async">
             <th>Name</th>
             <td>{{member.firstName}} {{member.lastName}}</td>
             <td>✎</td>
             <td>🗑️</td>
         </tr>
-      </tbody>
+      
     </table>
   </div>
 </div>

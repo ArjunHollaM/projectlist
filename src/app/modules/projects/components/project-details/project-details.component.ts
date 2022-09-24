@@ -15,18 +15,20 @@ export class ProjectDetailsComponent implements OnInit {
   
   project: Project
   members$: Observable<Members[]>;
+  flag: boolean = false;
+  static projForMembers: Project['id']
 
   constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent) { }
 
   ngOnInit(): void {
-    console.log(LoadProjectsComponent.updateFlag)
+    ProjectDetailsComponent.projForMembers = LoadProjectsComponent.projectToEdit.id
+    this.flag = LoadProjectsComponent.updateFlag;
     if(LoadProjectsComponent.updateFlag===true){
       this.project = LoadProjectsComponent.projectToEdit;
       console.log(this.project)
     }
     else{
       this.project =  {
-        id: '',
         name: '',
         techstack: '',
         description: '',
@@ -45,6 +47,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
+    this.project.id = '';
     this.project.name='';
     this.project.techstack= '';
     this.project.description= '';
@@ -52,11 +55,15 @@ export class ProjectDetailsComponent implements OnInit {
     this.project.duration= 0;
     this.project.budget= 0;
     this.project.status= '';
+    this.flag = false;
+    LoadProjectsComponent.updateFlag = false;
   }
 
-  onSubmit() {
+  async onSubmit() {
     if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==false){
-      this.projectService.addProject(this.project);
+      await this.projectService.addProject(this.project)
+      .then(()=>alert("Project was added successfully!"))
+      .catch(()=>alert('Error adding project'));
       this.project.name='';
       this.project.techstack= '';
       this.project.description= '';
@@ -67,7 +74,9 @@ export class ProjectDetailsComponent implements OnInit {
       this.location.back();
     }
     else if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==true){
-      this.projectService.updateProject(this.project);
+      await this.projectService.updateProject(this.project)
+      .then(()=>alert("Project was updated successfully!"))
+      .catch(()=>alert('Error updating project'));
       LoadProjectsComponent.updateFlag = false;
       this.project.name='';
       this.project.techstack= '';

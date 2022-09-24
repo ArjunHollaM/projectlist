@@ -42,7 +42,9 @@ export class LoadProjectsComponent implements OnInit {
   handleDelete(event: any, project: Project){
     if(confirm("Are you sure you want to delete this project? This action is permanent!"))
     {
-      this.projectService.deleteProject(project);
+      this.projectService.deleteProject(project)
+      .then(()=>alert(`Project '${project.name}' has been deleated`))
+      .catch(()=>alert('Failed!'));
     }
   }
 

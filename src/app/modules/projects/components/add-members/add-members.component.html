@@ -1,0 +1,25 @@
+<div class="container">
+    <h1>Member Details</h1>
+
+<form class="blk" (ngSubmit)="onSubmit()">
+    <br/>
+    <label for="firstName">First Name</label><br/>
+    <input [(ngModel)]="memberInfo.firstName" id="memberInfo.firstName" type="text" name="firstName">
+    <br/>
+
+    <label for="lastName">Last Name</label><br/>
+    <input [(ngModel)]="memberInfo.lastName" id="lastName" type="text" name="lastName">
+    <br/>
+    <label for="email">Email</label><br/>
+    <input [(ngModel)]="memberInfo.email" id="email" type="email" name="email">
+    <br/>
+    <label for="phoneNo">Phone No.</label><br/>
+    <input [(ngModel)]="memberInfo.phone" id="phoneNo" type="number" name="phone">
+    <br/>
+    <label for="hoursPerWeek">Hours per week</label><br/>
+    <input [(ngModel)]="memberInfo.hoursPerWeek" id="hoursPerweek" type="number" name="hoursPerWeek">
+    <br/>
+    <input type="submit" class="btn" value="Save">
+
+ </form>
+ </div>

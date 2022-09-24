@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { LoadProjectsComponent } from './components/load-projects/load-projects.component';
 import { ProjectDetailsComponent } from './components/project-details/project-details.component';
+import { AddMembersComponent } from './components/add-members/add-members.component';
 
 @NgModule({
-  declarations: [LoadProjectsComponent, ProjectDetailsComponent],
+  declarations: [LoadProjectsComponent, ProjectDetailsComponent, AddMembersComponent],
   imports: [CommonModule, ProjectsRoutingModule,FormsModule],
   exports: [LoadProjectsComponent, ProjectDetailsComponent],
 })
