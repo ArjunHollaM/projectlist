@@ -47,7 +47,7 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.project.id = '';
+    //this.project.id = '';
     this.project.name='';
     this.project.techstack= '';
     this.project.description= '';

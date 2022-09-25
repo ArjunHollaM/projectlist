@@ -13,6 +13,8 @@ export class ProjectdataService {
   //snapshot: any;
   members:Observable<Members[]>
   projectDoc: AngularFirestoreDocument<Project>;
+  memberstodel:Observable<Members[]>;
+  memberDocs: AngularFirestoreDocument<Members>;
   
 
   constructor(public afs: AngularFirestore) {
@@ -43,6 +45,11 @@ export class ProjectdataService {
   }
 
    async deleteProject(project: Project) {
+    // this.memberstodel = this.getMembers(project);
+    // this.memberstodel.forEach(element => {
+    //   this.memberDocs = this.afs.doc(`projects/${project.id}/members/${element}`)
+    //   this.memberDocs.delete();
+    // });
     this.projectDoc = this.afs.doc(`projects/${project.id}`);
     this.projectDoc.delete();
   }

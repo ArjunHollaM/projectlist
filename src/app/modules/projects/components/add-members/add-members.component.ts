@@ -37,9 +37,10 @@ export class AddMembersComponent implements OnInit {
     await this.projectService.addMembers(this.projectUC,this.memberInfo)
     .then(()=>{
       alert("Member was added successfully!");
-      this.router.navigate(['/projects']);})
+      this.router.navigate(['/projects']);
+    })
     .catch(()=>alert('Error adding member'));
-    this.location.back()
+    //this.location.back()
     this.memberInfo.firstName = '';
     this.memberInfo.lastName = '';
     this.memberInfo.email = '';
