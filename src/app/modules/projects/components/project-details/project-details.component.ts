@@ -59,6 +59,15 @@ export class ProjectDetailsComponent implements OnInit {
     LoadProjectsComponent.updateFlag = false;
   }
 
+  handleDel(event: any, member: Members){
+    if(confirm("Are you sure you want to delete this member? This action is permanent!"))
+    {
+      this.projectService.deleteMember(this.project, member)
+      .then(()=>alert(`Member '${member.firstName}' has been deleated`))
+      .catch(()=>alert('Failed!'));
+    }
+  }
+
   async onSubmit() {
     if(this.project.name != '' && this.project.techstack != '' && this.project.status != '' && LoadProjectsComponent.updateFlag==false){
       await this.projectService.addProject(this.project)

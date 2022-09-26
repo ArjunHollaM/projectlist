@@ -1,6 +1,7 @@
 <div class="container">
-    <h1>Project Details</h1>
+    
 <form class="blk" (ngSubmit)="onSubmit()">
+    <h1>Project Details</h1>
     <br/>
     <label>Name</label>  <br />
     <!-- <input type = "text" name = "name" /> -->
@@ -13,7 +14,7 @@
     <label>Budget</label> <br />
     <input type="text" name="budget" [(ngModel)]="project.budget"/><br/>
     <label>Description</label>  <br />
-    <textarea class="des" rows = "5" cols = "50" name = "description" [(ngModel)]="project.description"></textarea>
+    <textarea class="des" rows = "5" cols = "70" name = "description" [(ngModel)]="project.description"></textarea>
     <br/>
     <label>Start Date</label> <br />
     <input type="datetime-local" name="date" [(ngModel)]="project.startdate"/><br/>
@@ -29,14 +30,15 @@
  </form>
  <div *ngIf="this.flag" class="members">
     <h1>Member Details</h1>
-    <button class="btn" routerLink="/projects/add-members">Add Members</button>
+    <button class="btn1" routerLink="/projects/add-members">+</button>
     <table id="memberstable" class="namelist">
-      
-        <tr *ngFor="let member of members$ | async">
+        <tr>
             <th>Name</th>
+        </tr>
+        <tr *ngFor="let member of members$ | async">
             <td>{{member.firstName}} {{member.lastName}}</td>
             <td>✎</td>
-            <td>🗑️</td>
+            <td><a (click)="handleDel($event, member);" class="rmvupd">🗑️</a></td>
         </tr>
       
     </table>
