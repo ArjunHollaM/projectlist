@@ -15,6 +15,7 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.auth.isLoggedIn().pipe(
       tap((valid) => {
+        console.log(valid);
         if(!valid) {
           this.router.parseUrl('/login');
         }

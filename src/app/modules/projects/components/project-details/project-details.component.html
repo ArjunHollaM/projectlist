@@ -37,7 +37,7 @@
         </tr>
         <tr *ngFor="let member of members$ | async">
             <td>{{member.firstName}} {{member.lastName}}</td>
-            <td>✎</td>
+            <td><a (click)="handleUpd($event, member);" class="rmvupd">✎</a></td>
             <td><a (click)="handleDel($event, member);" class="rmvupd">🗑️</a></td>
         </tr>
       

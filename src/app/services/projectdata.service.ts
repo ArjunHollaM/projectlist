@@ -71,4 +71,8 @@ export class ProjectdataService {
     this.memberDoc.delete();
   }
 
+  async updateMember(project: Project, member: Members) {
+    this.afs.doc('projects/' + project.id + '/members/' + member.id).update(member);
+  }
+
 }

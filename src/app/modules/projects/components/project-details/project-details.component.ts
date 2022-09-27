@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { LoadProjectsComponent } from '../load-projects/load-projects.component';
 import { Members } from '../../Members';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-project-details',
@@ -17,8 +18,11 @@ export class ProjectDetailsComponent implements OnInit {
   members$: Observable<Members[]>;
   flag: boolean = false;
   static projForMembers: Project['id']
+  static updateMemFlag: boolean;
+  static memberToEdit: Members;
+  static projectMemEdit: Project;
 
-  constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent) { }
+  constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent, private router: Router) { }
 
   ngOnInit(): void {
     ProjectDetailsComponent.projForMembers = LoadProjectsComponent.projectToEdit.id
@@ -63,9 +67,16 @@ export class ProjectDetailsComponent implements OnInit {
     if(confirm("Are you sure you want to delete this member? This action is permanent!"))
     {
       this.projectService.deleteMember(this.project, member)
-      .then(()=>alert(`Member '${member.firstName}' has been deleated`))
+      .then(()=>alert(`Member '${member.firstName}' has been deleted`))
       .catch(()=>alert('Failed!'));
     }
+  }
+
+  handleUpd(event: any, member: Members){
+    ProjectDetailsComponent.updateMemFlag = true;
+    ProjectDetailsComponent.memberToEdit = member;
+    ProjectDetailsComponent.projectMemEdit = this.project;
+    this.router.navigate(['/projects/add-members']);
   }
 
   async onSubmit() {
