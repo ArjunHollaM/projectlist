@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 export class LoadProjectsComponent implements OnInit {
 
   projects$: Observable<Project[]>;
-  static updateFlag: boolean;
+  static updateFlag: boolean = false;
   static projectToEdit: Project
 
   constructor(private location: Location, private projectService: ProjectdataService,private router: Router) { }

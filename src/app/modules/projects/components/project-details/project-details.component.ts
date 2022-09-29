@@ -14,20 +14,21 @@ import { Router } from '@angular/router';
 })
 export class ProjectDetailsComponent implements OnInit {
   
-  project: Project
+  project: Project;
   members$: Observable<Members[]>;
   flag: boolean = false;
   static projForMembers: Project['id']
-  static updateMemFlag: boolean;
+  static updateMemFlag: boolean = false;
   static memberToEdit: Members;
   static projectMemEdit: Project;
 
   constructor(private location: Location, private projectService: ProjectdataService,private projectComponent: LoadProjectsComponent, private router: Router) { }
 
   ngOnInit(): void {
-    ProjectDetailsComponent.projForMembers = LoadProjectsComponent.projectToEdit.id
+    
     this.flag = LoadProjectsComponent.updateFlag;
     if(LoadProjectsComponent.updateFlag===true){
+      ProjectDetailsComponent.projForMembers = LoadProjectsComponent.projectToEdit.id
       this.project = LoadProjectsComponent.projectToEdit;
       console.log(this.project)
     }

@@ -4,6 +4,7 @@
 <form class="blk" (ngSubmit)="onSubmit()">
     <h1>Member Details</h1>
     <br/>
+    <img src="/assets/images/pp.jpg" alt="user-profile-picture" class="avatar"/><br>
     <label for="firstName">First Name</label><br/>
     <input [(ngModel)]="memberInfo.firstName" id="memberInfo.firstName" type="text" name="firstName">
     <br/>
@@ -20,6 +21,7 @@
     <label for="hoursPerWeek">Hours per week</label><br/>
     <input [(ngModel)]="memberInfo.hoursPerWeek" id="hoursPerweek" type="number" name="hoursPerWeek">
     <br/>
+    <input routerLink="/projects" type="button" class="btn" value="Cancel">
     <input type="submit" class="btn" value="Save">
 
  </form>
