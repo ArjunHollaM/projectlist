@@ -33,9 +33,11 @@
     <button class="btn1" routerLink="/projects/add-members">+</button>
     <table id="memberstable" class="namelist">
         <tr>
+            <th></th>
             <th>Name</th>
         </tr>
         <tr *ngFor="let member of members$ | async">
+            <td><img src="{{member.pppath}}" width="60px" height="60px" alt="Profilepic"></td>
             <td>{{member.firstName}} {{member.lastName}}</td>
             <td><a (click)="handleUpd($event, member);" class="rmvupd">✎</a></td>
             <td><a (click)="handleDel($event, member);" class="rmvupd">🗑️</a></td>

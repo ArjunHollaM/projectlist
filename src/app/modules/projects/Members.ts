@@ -5,4 +5,5 @@ export interface Members{
     email: string;
     phone: string;
     hoursPerWeek: number;
+    pppath?: string;
 }

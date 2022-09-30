@@ -70,3 +70,9 @@ h1 {
     padding: 8px;
     font-size: 20px;
   }
+  progress {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    width: 97%;
+  }

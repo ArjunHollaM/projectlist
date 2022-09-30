@@ -5,6 +5,9 @@ import { Project } from '../../Project';
 import { Location } from '@angular/common';
 import { ProjectDetailsComponent } from '../project-details/project-details.component';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-members',
@@ -17,8 +20,11 @@ export class AddMembersComponent implements OnInit {
   projectUC: Project['id'];
   flag: boolean;
   projectUCforEdit: Project;
+  downloadURL:Observable<string>
+  uploadPercent:Observable<number|undefined>
+  imgupdateFlag:Boolean=true
 
-  constructor(private location: Location, private projectService: ProjectdataService, private router: Router) { }
+  constructor(private location: Location, private projectService: ProjectdataService, private storage:AngularFireStorage, private router: Router) { }
 
   ngOnInit(): void {
     this.flag = ProjectDetailsComponent.updateMemFlag;
@@ -66,6 +72,7 @@ export class AddMembersComponent implements OnInit {
       this.memberInfo.email = '';
       this.memberInfo.phone = '';
       this.memberInfo.hoursPerWeek = 0;
+      this.memberInfo.pppath = '';
     }
     else if(ProjectDetailsComponent.updateMemFlag==true){
       await this.projectService.updateMember(this.projectUCforEdit,this.memberInfo)
@@ -80,8 +87,26 @@ export class AddMembersComponent implements OnInit {
       this.memberInfo.email = '';
       this.memberInfo.phone = '';
       this.memberInfo.hoursPerWeek = 0;
+      this.memberInfo.pppath = '';
     }
     
+  }
+
+  uploadFile(event:any){
+    this.imgupdateFlag=false
+    const file=event.target.files[0]
+    const filePath='profilepic/'+this.memberInfo.firstName
+    const fileRef = this.storage.ref(filePath);
+    const task=this.storage.upload(filePath,file)
+   this.uploadPercent=task.percentageChanges()
+    task.snapshotChanges().pipe(
+      finalize(() => {
+        this.imgupdateFlag=true
+        this.downloadURL = fileRef.getDownloadURL()
+        this.downloadURL.subscribe(data=>this.memberInfo.pppath=data)
+      } )
+   )
+  .subscribe()
   }
 
 }
