@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs/operators';
+import { LoadProjectsComponent } from '../load-projects/load-projects.component';
 
 @Component({
   selector: 'app-add-members',

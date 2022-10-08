@@ -14,8 +14,10 @@
     display: inline-block;
   }
   .btn {
-    display: block;
-    margin: auto;
+    display: inline;
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 0px;
     padding: 7px;
     width: 150px;
     font-size: 18px;

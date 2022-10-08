@@ -4,6 +4,7 @@
     font-size: 30px;
 }
 .projectlisting {
+  text-align: left;
     border-collapse: collapse;
     width: 100%;
   }
@@ -20,21 +21,22 @@
   th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: center;
+    text-align: left;
     background-color: #168a5d;
     color: white;
   }
   .backbtn {
+    float: left;
     background-color: #168a5d;
     border: none;
     color: white;
     padding: 12px 30px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+    margin-left: 10px;
+    margin-right: 0px;
     transition-duration: 0.3s;
     cursor: pointer;
   }
