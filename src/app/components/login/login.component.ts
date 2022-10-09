@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './../../services/authentication.service';
+
+const googleLogoURL = "https://raw.githubusercontent.com/fireflysemantics/logo/master/Google.svg";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +15,12 @@ import { AuthenticationService } from './../../services/authentication.service';
 export class LoginComponent implements OnInit {
   registerForm: FormGroup;
   loginError: string = '';
-  constructor(private fb: FormBuilder, public authService: AuthenticationService, private router: Router) {}
+  
+  constructor(private fb: FormBuilder, public authService: AuthenticationService, private router: Router,  private matIconRegistry:MatIconRegistry,private domSanitizer:DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      "logo",
+      this.domSanitizer.bypassSecurityTrustResourceUrl(googleLogoURL));
+  }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({

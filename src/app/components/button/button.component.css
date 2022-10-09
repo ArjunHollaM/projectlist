@@ -1,10 +1,7 @@
 .btn {
-    border-color: aqua;
-    background-color: aqua;
+    background-color: rgb(204, 204, 189);
     text-decoration: none;
     color: black;
-    height: 30px;
-    width: 50px;
 }
 .btn a {
     color: black;

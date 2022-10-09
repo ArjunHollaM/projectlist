@@ -21,6 +21,15 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { PhoneLoginComponent } from './components/phone-login/phone-login.component';
 import { CodeComponent } from './components/code/code.component';
 import { NgOtpInputModule } from 'ng-otp-input';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +55,16 @@ import { NgOtpInputModule } from 'ng-otp-input';
     HotToastModule.forRoot(),
     NgOtpInputModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatMenuModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

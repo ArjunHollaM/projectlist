@@ -1,5 +1,5 @@
 <header>
-  <ul class="nav">
+  <!-- <ul class="nav">
     <div><h1 class="name">COMPANY</h1></div>
     <div>
       <li><a routerLinkActive="active" routerLink="/home">Home</a></li>
@@ -11,5 +11,19 @@
         }}</a>
       </li>
     </div>
-  </ul>
+  </ul> -->
+
+    <mat-menu #menu="matMenu">
+            <a routerLink="/home" mat-menu-item>Home</a>
+            <a *ngIf="userLoggedIn" routerLink="/projects" mat-menu-item>Projects</a>
+            <a *ngIf="userLoggedIn" routerLink="/profile" mat-menu-item>Profile</a>
+            <a (click)="toggleLogin()" mat-menu-item>{{userLoggedIn ? 'Logout' : 'Login'}}</a>
+    </mat-menu>
+    <mat-toolbar>
+      <h1 class="headerToolbar">COMPANY</h1>
+        <button class="headerToolbar" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+
 </header>

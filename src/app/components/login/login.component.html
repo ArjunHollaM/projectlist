@@ -1,25 +1,27 @@
 <div class="container">
   <div class="blk">
   <div>
-    <h3>Login</h3>
+    <h1>Login</h1>
   </div>
   <div *ngIf="loginError">
     {{ loginError }}
   </div>
   <form [formGroup]="registerForm">
-    <label for="uname">Email</label>
-    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
-
-    <label for="psw">Password</label>
-    <input type="password" formControlName="password" placeholder="Enter Password" name="psw" required />
-
-    <button class="btn" type="submit" (click)="login()">Log In</button>
+    <mat-form-field appearance="outline" class="ff">
+    <mat-label for="uname">Email</mat-label>
+    <input matInput type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="ff">
+    <mat-label for="psw">Password</mat-label>
+    <input matInput type="password" formControlName="password" placeholder="Enter Password" name="psw" required />
+    </mat-form-field>
+    <button mat-raised-button class="btn" type="submit" (click)="login()">Log In</button>
     <div class="nr googleBtn" (click)="googleLogin()">
-      <i class="fa-brands fa-google"></i>
-      Log in with Google
+      <mat-icon style="width: 30px; height:15px" svgIcon="logo"></mat-icon>
+      <mat-label>Log in with Google</mat-label>
     </div>
-    <div class="nr"><span>Phone Login?</span><a routerLink="/phone">Login Here</a></div>
+    <div class="nr" routerLink="/phone"><mat-icon>call</mat-icon><mat-label>Phone Login</mat-label></div>
   </form>
-  <div class="nr"><span>Not registered yet?</span> <a routerLink="/signup">REGISTER</a></div>
+  <div class="nr" routerLink="/signup"><mat-icon>person_add</mat-icon><mat-label>Register Here</mat-label></div>
 </div>
 </div>

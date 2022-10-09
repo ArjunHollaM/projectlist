@@ -1,22 +1,29 @@
 <div class="container">
   <div class="blk">
   <div>
-    <h3>Register</h3>
+    <h1>Register</h1>
   </div>
   <form [formGroup]="signUpForm">
-    <label for="uname">Email</label>
-    <input type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
 
-    <label for="pass">Password</label>
-    <input type="password" formControlName="password" placeholder="Enter Password" name="pass" required />
+    <mat-form-field appearance="outline" class="ff">
+    <mat-label for="uname">Email</mat-label>
+    <input matInput type="text" formControlName="email" placeholder="Enter Email" name="uname" required />
+    </mat-form-field>
 
-    <label for="pass">Confirm Password</label>
-    <input type="password" formControlName="rePassword" placeholder="Re-type Password" name="pass" required />
+    <mat-form-field appearance="outline" class="ff">
+    <mat-label for="pass">Password</mat-label>
+    <input matInput type="password" formControlName="password" placeholder="Enter Password" name="pass" required />
+    </mat-form-field>
 
-    <button class="btn" (click)="signUp()">Sign Up</button>
+    <mat-form-field appearance="outline" class="ff">
+    <mat-label for="pass">Confirm Password</mat-label>
+    <input matInput type="password" formControlName="rePassword" placeholder="Re-type Password" name="pass" required />
+    </mat-form-field>
+
+    <button mat-raised-button class="btn" (click)="signUp()">Sign Up</button>
   </form>
   <div class="nr">
-    <span class="psw">Already have an account? <a routerLink="/login">Click here to Login</a></span>
+    <span class="psw"><mat-icon>person</mat-icon>Already have an account? <a routerLink="/login">Click here to Login</a></span>
   </div>
 </div>
 </div>

@@ -11,12 +11,12 @@
   .btn {
     display: block;
     margin: auto;
-    padding: 7px;
-    background-color: rgb(47, 79, 68);
-    color: white;
+    background-color:rgb(204, 204, 189);
+    color: rgb(0, 0, 0);
     cursor: pointer;
   }
   .enterotp, h2 {
+    color: red;
     display: block;
     margin: auto;
     margin-top: 10px;
