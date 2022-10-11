@@ -30,6 +30,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     MatMenuModule, 
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

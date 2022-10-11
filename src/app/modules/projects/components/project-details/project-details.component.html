@@ -3,34 +3,48 @@
 <form class="blk" (ngSubmit)="onSubmit()">
     <h1>Project Details</h1>
     <br/>
-    <label>Name</label>  <br />
+    <mat-form-field appearance="standard">
+    <mat-label>Name</mat-label>
     <!-- <input type = "text" name = "name" /> -->
-    <input type="text" name="name" [(ngModel)]="project.name"/><br/>
-    <label>Techstack</label> <br />
+    <input matInput type="text" name="name" [(ngModel)]="project.name"/>
+    </mat-form-field><br/>
+    <mat-form-field appearance="standard">
+    <mat-label>Techstack</mat-label> 
     <!-- <input type = "text" name = "name" /> -->
-    <input type="text" name="techstack" [(ngModel)]="project.techstack"/><br/>
-    <label>Duration</label> <br />
-    <input type="text" name="duration" [(ngModel)]="project.duration"/><br/>
-    <label>Budget</label> <br />
-    <input type="text" name="budget" [(ngModel)]="project.budget"/><br/>
-    <label>Description</label>  <br />
-    <textarea class="des" rows = "5" cols = "70" name = "description" [(ngModel)]="project.description"></textarea>
-    <br/>
-    <label>Start Date</label> <br />
-    <input type="datetime-local" name="date" [(ngModel)]="project.startdate"/><br/>
-    <label>Status</label> <br />
-    <select name="status" class="statusselect"  [(ngModel)]="project.status">
+    <input matInput type="text" name="techstack" [(ngModel)]="project.techstack"/><br/>
+    </mat-form-field><br>
+    <mat-form-field appearance="standard">
+    <mat-label>Duration</mat-label>
+    <input matInput type="text" name="duration" [(ngModel)]="project.duration"/><br/>
+    </mat-form-field><br>
+    <mat-form-field appearance="standard">
+    <mat-label>Budget</mat-label>
+    <input matInput type="text" name="budget" [(ngModel)]="project.budget"/><br/>
+    </mat-form-field><br>
+    <mat-form-field appearance="standard">
+    <mat-label>Description</mat-label>
+    <input matInput type="text" name = "description" [(ngModel)]="project.description" /><br/>
+    </mat-form-field><br>
+    <mat-form-field>
+    <mat-label>Start Date</mat-label>
+    <input matInput type="datetime-local" name="date" [(ngModel)]="project.startdate"/><br/>
+    <mat-datepicker-toggle matSuffix ></mat-datepicker-toggle>
+    </mat-form-field><br>
+    <mat-form-field>
+    <mat-label>Status</mat-label>
+    <select  matNativeControl name="status" class="statusselect"  [(ngModel)]="project.status">
         <option value="Completed">Completed</option>
         <option value="In-progress">In-Progress</option>
         <option value="New" selected>New</option>
         <option value="Budgeted">Budgeted</option>
     </select>
-    <input routerLink="/projects" type="button" class="btn" value="Cancel">
-    <input type="submit" class="btn" value="Save">
+    </mat-form-field><br>
+    <button mat-raised-button routerLink="/projects" color="warn" value="Cancel">Cancel</button>
+    <button mat-raised-button type="submit">Save</button>
  </form>
  <div *ngIf="this.flag" class="members">
     <h1>Member Details</h1>
-    <button class="btn1" routerLink="/projects/add-members">+</button>
+    <button mat-raised-button class="btn1" routerLink="/projects/add-members"><mat-icon>person_add</mat-icon></button>
     <table id="memberstable" class="namelist">
         <tr>
             <th></th>
@@ -39,8 +53,8 @@
         <tr *ngFor="let member of members$ | async">
             <td><img src="{{member.pppath}}" width="60px" height="60px"  onerror="this.src='/assets/images/pp.jpg'"></td>
             <td>{{member.firstName}} {{member.lastName}}</td>
-            <td><a (click)="handleUpd($event, member);" class="rmvupd">✎</a></td>
-            <td><a (click)="handleDel($event, member);" class="rmvupd">🗑️</a></td>
+            <td><a (click)="handleUpd($event, member);" class="rmvupd"><mat-icon>mode_edit</mat-icon></a></td>
+            <td><a (click)="handleDel($event, member);" class="rmvupd"><mat-icon>delete</mat-icon></a></td>
         </tr>
       
     </table>

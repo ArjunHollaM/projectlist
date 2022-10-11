@@ -4,27 +4,34 @@
 <form class="blk" (ngSubmit)="onSubmit()">
     <h1>Member Details</h1>
     <br/>
-    <input type="file" name="profilepic" (change)="uploadFile($event)">
+    <input class="ppfile" type="file" name="profilepic" (change)="uploadFile($event)">
     <progress *ngIf="!imgupdateFlag" value={{uploadPercent|async}} max="100"></progress><br>
     <!-- <img src="/assets/images/pp.jpg" alt="user-profile-picture" class="avatar"/><br> -->
-    <label for="firstName">First Name</label><br/>
-    <input [(ngModel)]="memberInfo.firstName" id="memberInfo.firstName" type="text" name="firstName">
+    <mat-form-field appearance="standard">
+    <mat-label for="firstName">First Name</mat-label>
+    <input matInput [(ngModel)]="memberInfo.firstName" id="memberInfo.firstName" type="text" name="firstName">
+    </mat-form-field>
     <br/>
-
-    <label for="lastName">Last Name</label><br/>
-    <input [(ngModel)]="memberInfo.lastName" id="lastName" type="text" name="lastName">
+    <mat-form-field appearance="standard">
+    <mat-label for="lastName">Last Name</mat-label>
+    <input matInput [(ngModel)]="memberInfo.lastName" id="lastName" type="text" name="lastName">
+    </mat-form-field>
     <br/>
-    <label for="email">Email</label><br/>
-    <input [(ngModel)]="memberInfo.email" id="email" type="email" name="email">
+    <mat-form-field appearance="standard">
+    <mat-label for="email">Email</mat-label>
+    <input matInput [(ngModel)]="memberInfo.email" id="email" type="email" name="email">
+    </mat-form-field>
     <br/>
-    <label for="phoneNo">Phone No.</label><br/>
-    <input [(ngModel)]="memberInfo.phone" id="phoneNo" type="number" name="phone">
-    <br/>
-    <label for="hoursPerWeek">Hours per week</label><br/>
-    <input [(ngModel)]="memberInfo.hoursPerWeek" id="hoursPerweek" type="number" name="hoursPerWeek">
-    <br/>
-    <input routerLink="/projects" type="button" class="btn" value="Cancel">
-    <input type="submit" class="btn" value="Save">
+    <mat-form-field appearance="standard">
+    <mat-label for="phoneNo">Phone No.</mat-label>
+    <input matInput [(ngModel)]="memberInfo.phone" id="phoneNo" type="number" name="phone">
+    </mat-form-field><br/>
+    <mat-form-field appearance="standard">
+    <mat-label for="hoursPerWeek">Hours per week</mat-label>
+    <input matInput [(ngModel)]="memberInfo.hoursPerWeek" id="hoursPerweek" type="number" name="hoursPerWeek">
+    </mat-form-field><br/>
+    <button mat-raised-button routerLink="/projects" color="warn" value="Cancel">Cancel</button>
+    <button mat-raised-button type="submit" value="Save">Save</button>
 
  </form>
  </div>
